@@ -39,12 +39,11 @@ def add_time(start_time, duration_time, day_week=""):
                 hour -= 24
                 days += 1
             
-            # if hour > 12:
-            #     print("esto es una prueba")
-            #     hour -= 12
-        
-            # print(horario)
-            # horario = 'AM' # revisar
+            if hour > 12:
+                hour -= 12
+            else:
+                horario = 'AM'
+                
         else:
             hour -= 12
             
@@ -81,7 +80,6 @@ def add_time(start_time, duration_time, day_week=""):
         if minute < 10:
             minute = "0" + str(minute)
         
-    
     # Valida si viene el parametro dia, y si se adicionaron dias entonces calcula el dia que queda 
     for day in range(len(day_lst)):
         if day_lst[day] == day_week:
@@ -110,17 +108,15 @@ def add_time(start_time, duration_time, day_week=""):
         else:
             final_hour = str(hour) + ":" + str(minute) + " " + horario 
             
-    
-    
     return final_hour
 
-print(add_time("3:00 PM", "3:10"))
+# print(add_time("3:00 PM", "3:10"))
 # print(add_time("11:30 AM", "2:32", "Monday"))
 # print(add_time("11:43 AM", "00:20"))
-print(add_time("10:10 PM", "3:30"))
+# print(add_time("10:10 PM", "3:30"))
 # print(add_time("11:43 PM", "24:20", "tueSday"))
 
-print(add_time("6:30 PM", "205:12"))
+# print(add_time("6:30 PM", "205:12"))
 # print(add_time("7:30 AM", "205:12", "sunday"))
 
 # print(add_time("11:06 PM", "2:02"))
